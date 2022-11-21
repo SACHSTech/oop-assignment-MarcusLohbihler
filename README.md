@@ -6,4 +6,4 @@
 *Insert Class Diagram here*  
 
 ## Summary
-*Include a brief summary that describes your system that your are modelling*
+Spotify is a music app where its users can play various songs, create playlists, and keep up with their favourite artists' latest releases. To model spotify, I used a user class to replicate how a user would interact with the app. I also have an abstract class for songs, which is extends my album and playlist classes. These classes all have names and can be liked by other users, while only albums and playlists have owners and lengths. A single is an extension of the album class, with the difference being that a single contains only one song. I also have created a queue class which you can add and remove songs from and decide what order they play in.
