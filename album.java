@@ -5,7 +5,7 @@ public class album extends song{
   private boolean EP;
   private ArrayList<user> likes = new ArrayList<user>();
   private int likeCount;
-  public album(String theName, int theLength, user theArtist, ArrayList<user> theLikes){
+  public album(String theName, int theLength, Artist theArtist, ArrayList<user> theLikes){
     super(theName, theArtist, theLikes);
     this.albumLength = theLength;
     if(theLength <= 6){
@@ -23,7 +23,7 @@ public class album extends song{
     return albumLength;
   }
 
-  public user getArtist(){
+  public Artist getArtist(){
     return super.getArtist();
   }
 
@@ -55,5 +55,9 @@ public class album extends song{
 
   public void playSong(String songName){
     System.out.println("Playing: " + songName + "from " + super.getName());
+  }
+
+  public String toString(){
+    return "The album is " + getAlbumName() + "by" + super.getArtist() + ". It is " + this.albumLength + "songs long and has " + this.likeCount + "likes";
   }
 }

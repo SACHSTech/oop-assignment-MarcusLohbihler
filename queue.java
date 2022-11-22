@@ -29,4 +29,8 @@ public class queue{
   public void replaceInQueue(song songName, int number){
     queueList.set(number, songName);
   }
+
+  public String toString(){
+    return "The queue contains the following songs " + this.queueList + "and is " + this.queueLength + "songs long";
+  }
 }

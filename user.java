@@ -4,25 +4,22 @@ public class user{
   private String name;
   private String email;
   private boolean hasPremium;
-  private boolean isVerified;
-  private int listenerCount;
+  
   private ArrayList<song> likedSongs = new ArrayList<song>();
   private ArrayList<album> likedAlbums = new ArrayList<album>();
   private ArrayList<playlist> likedPlaylists = new ArrayList<playlist>();
   private ArrayList<single> likedSingles = new ArrayList<single>();
   private int likedCount;
 
-  public user(String theName, String theEmail, boolean premium, boolean verified, int theListenerCount, ArrayList<song> theLikedSongs, ArrayList<album> theLikedAlbums, ArrayList<playlist> theLikedPlaylists, ArrayList<single> theLikedSingles, int theLikedCount){
+  public user(String theName, String theEmail, boolean premium, ArrayList<song> theLikedSongs, ArrayList<album> theLikedAlbums, ArrayList<playlist> theLikedPlaylists, ArrayList<single> theLikedSingles, int theLikedCount){
     this.name = theName;
     this.email = theEmail;
     this.hasPremium = premium;
-    this.isVerified = verified;
     this.likedSongs = theLikedSongs;
     this.likedAlbums = theLikedAlbums;
     this.likedPlaylists = theLikedPlaylists;
     this.likedSingles = theLikedSingles;
     this.likedCount = theLikedCount;
-    this.listenerCount = theListenerCount;
   }
 
   public String getName(){
@@ -33,10 +30,6 @@ public class user{
     return email;
   }
 
-  public int getListenerCount(){
-    return listenerCount;
-  }
-
   public boolean getPremium(){
     return hasPremium;
   }
@@ -44,16 +37,6 @@ public class user{
   public boolean unsubscribeFromPremium(){
     hasPremium = false;
     return hasPremium;
-  }
-
-  public boolean verify(){
-    isVerified = true;
-    return isVerified;
-  }
-
-  public boolean unverify(){
-    isVerified = false;
-    return isVerified;
   }
 
   public ArrayList<song> getLikedSongs(){
@@ -84,11 +67,6 @@ public class user{
   public String setEmail(String newEmail){
     email = newEmail;
     return email;
-  }
-
-  public int setListenerCount(int listeners){
-    listenerCount = listeners;
-    return listenerCount;
   }
 
   public boolean buyPremium(){
@@ -142,5 +120,9 @@ public class user{
 
   public void search(String itemName){
     System.out.println("Results for: " + itemName);
+  }
+
+  public String toString(){
+    return this.name + " uses the email " + this.email + ". Has premium: " + this.hasPremium + ". " + this.name + " has liked the following items: " + this.likedSongs + this.likedAlbums + this.likedPlaylists + this.likedSingles;
   }
 }

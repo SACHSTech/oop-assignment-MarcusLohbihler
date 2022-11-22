@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class single extends album{
   private ArrayList<user> likes = new ArrayList<user>();
-  public single(String theName, ArrayList<user> theLikes, user theArtist, int theLength){ 
+  public single(String theName, ArrayList<user> theLikes, Artist theArtist, int theLength){ 
     super(theName, theLength, theArtist, theLikes);
   }
 
@@ -12,6 +12,10 @@ public class single extends album{
 
   public int getLength(){
     return super.getLength();
+  }
+
+  public Artist getArtist(){
+    return super.getArtist();
   }
 
   public ArrayList<user> getLikes(){
@@ -32,5 +36,9 @@ public class single extends album{
     
   public void play(){
     System.out.println("Playing: " + super.getName());
+  }
+
+  public String toString(){
+    return "The single is " + super.getAlbumName() + " by " + super.getArtist() + ". It is " + super.getLength() + " song long and has " + super.getLikeCount() + " likes";
   }
 }

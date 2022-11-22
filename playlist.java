@@ -1,17 +1,21 @@
 import java.util.ArrayList;
 
-public class playlist extends song{
+public class playlist{
+  private String name;
   private ArrayList<song> playlistArr = new ArrayList<song>();
   private ArrayList<user> likes = new ArrayList<user>();
   private int playlistLength = 0;
   private int likeCount;
   private user owner;
-  public playlist(String theName, user theOwner, ArrayList<user> theLikes){
-    super(theName, theOwner, theLikes);
+  public playlist(String theName, user theOwner, ArrayList<user> theLikes, ArrayList<song> thePlaylist){
+    name = theName;
+    owner = theOwner;
+    likes = theLikes;
+    playlistArr = thePlaylist;
   }
 
   public String getName(){
-    return super.getName();
+    return name;
   }
 
   public int getPlaylistLength(){
@@ -27,7 +31,11 @@ public class playlist extends song{
   }
 
   public ArrayList<user> getLikes(){
-    return super.getLikes();
+    return likes;
+  }
+
+  public int getLikeCount(){
+    return likeCount;
   }
 
   public void addLike(user name){
@@ -39,10 +47,7 @@ public class playlist extends song{
     likes.remove(name);
     likeCount--;
   }
-  
-  public int getLikeCount(){
-    return super.getLikeCount();
-  } 
+
   
   public void addSong(song songName){
     playlistArr.add(songName);
@@ -55,10 +60,14 @@ public class playlist extends song{
   }
   
   public void play(){
-    System.out.println("Playing: " + super.getName());
+    System.out.println("Playing: " + name);
   }
 
   public void playSong(String songName){
-    System.out.println("Playing: " + songName + "from " + super.getName());
+    System.out.println("Playing: " + songName + "from " + name);
+  }
+
+  public String toString(){
+    return (this.name + " is owned by " + this.owner + " and contains the songs: " + this.playlistArr);
   }
 }

@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "Main.java": [
+      {
+        "id": "8bbb75f4-5661-4989-a9b1-a58889140b36",
+        "line": 1,
+        "version": 309,
+        "index": 0
+      }
+    ]
+  }
 }

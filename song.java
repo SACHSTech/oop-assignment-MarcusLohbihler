@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public abstract class song{
+public class song{
   private String name;
-  private user artist;
+  private Artist artist;
   private ArrayList<user> likes = new ArrayList<user>();
   private int likeCount;
 
-  public song(String theName, user theArtist, ArrayList<user> theLikes){
+  public song(String theName, Artist theArtist, ArrayList<user> theLikes){
     this.name = theName;
     this.artist = theArtist;
     likes = theLikes;
@@ -16,8 +16,8 @@ public abstract class song{
     return this.name;
   }
 
-  public user getArtist(){
-    return artist;
+  public Artist getArtist(){
+    return this.artist;
   }
   
   public int getLikeCount(){
@@ -43,7 +43,6 @@ public abstract class song{
   }
 
   public String toString(){
-    String printStatement = ("The song is " + name + "by " + artist + "and has " + likeCount + "likes");
-    return printStatement;
+    return "The song is " + this.name + " by " + this.artist + " and has " + this.likeCount + " likes";
   }
 }
